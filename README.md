@@ -37,7 +37,7 @@ If you would like to contribute to this project, please fork the repository and 
 
 ## License
 
-This project is licensed under the MIT License. See the [License](https://fontawesome.com/). file for more details.
+This project is licensed under the MIT License. See the [License](https://raw.githubusercontent.com/robertlinton/Canvas-Resizer-Tool/main/LICENSE.md). file for more details.
 
 ### Important License Terms:
 - **Credit:** All copies, modified versions, or substantial portions of the Software must include the following attribution in a clear and visible location within the project:
