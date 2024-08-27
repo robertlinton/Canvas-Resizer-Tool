@@ -1,6 +1,6 @@
-# CliveTools
+# clivethings
 
-Welcome to CliveTools, a personal website for sharing useful tools with friends and fellow developers. This site currently features two main tools: Canvas Tool for image processing and Combine Docs for merging text files.
+Welcome to clivethings, a personal website for sharing useful tools with friends and fellow developers. This site currently features two main tools: Canvas Tool for image processing and Combine Docs for merging text files.
 
 ## Table of Contents
 
@@ -24,11 +24,11 @@ Welcome to CliveTools, a personal website for sharing useful tools with friends 
 
 1. Clone the repository:
    ```
-   git clone https://github.com/robertlinton/clivetools.git
+   git clone https://github.com/robertlinton/clivethings.git
    ```
 2. Navigate to the project directory:
    ```
-   cd clivetools
+   cd clivethings
    ```
 3. Open `index.html` in your web browser to run the application locally.
 
@@ -67,7 +67,7 @@ Features:
 
 ## Contributing
 
-We welcome contributions to CliveTools! If you have a suggestion or have found a bug, please open an issue. If you'd like to contribute code, please fork the repository and create a pull request.
+We welcome contributions to clivethings! If you have a suggestion or have found a bug, please open an issue. If you'd like to contribute code, please fork the repository and create a pull request.
 
 ## License
 
@@ -77,4 +77,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 If you have any questions or need further information, please contact Clive at [clivethings@gmail.com].
 
-Thank you for using CliveTools!
+Thank you for using clivethings!
