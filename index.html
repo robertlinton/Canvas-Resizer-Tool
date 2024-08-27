@@ -3,54 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas Tool</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-    <link rel="icon" type="image/png" href="/assets/favicon.png">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>CliveTools</title>
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Canvas Tool</h1>
-        </header>
-        
-        <main>
-            <section class="upload-section">
-                <div class="upload-container">
-                    <input type="file" id="imageInput" accept="image/*" multiple>
-                    <label for="imageInput" class="file-input-label">
-                        <i class="fas fa-cloud-upload-alt"></i> Choose Files
-                    </label>
-                    <div class="drop-area" id="dropArea">
-                        <p>Or drop files here</p>
-                    </div>
-                </div>
-            </section>
-            <section id="gallerySection" class="gallery-section" style="display: none;">
-                <div class="gallery-header">
-                    <h2>Image Gallery</h2>
-                    <div class="gallery-actions">
-                        <button id="downloadAllButton" class="button primary">
-                            <i class="fas fa-download"></i> Download All
-                        </button>
-                        <button id="clearAllButton" class="button secondary">
-                            <i class="fas fa-trash"></i> Clear All
-                        </button>
-                    </div>
-                </div>
-                <div id="gallery"></div>
-                <div id="pagination"></div>
-            </section>
-        </main>
+    <!-- Main Menu -->
+    <div id="main-menu" class="container">
+        <h1>CliveTools</h1>
+        <div class="tool-grid">
+            <div class="tool-card" data-tool="canvas">
+                <div class="tool-icon"><i class="fas fa-image"></i></div>
+                <div class="tool-name">Canvas Tool</div>
+                <div class="tool-description">Process and manage images</div>
+            </div>
+            <div class="tool-card" data-tool="combine">
+                <div class="tool-icon"><i class="fas fa-file-alt"></i></div>
+                <div class="tool-name">Combine Docs</div>
+                <div class="tool-description">Merge multiple text files</div>
+            </div>
+        </div>
     </div>
+
+    <!-- Canvas Tool -->
+    <div id="canvas-tool" class="tool-container" style="display: none;">
+        <h1>Canvas Tool</h1>
+        <div class="section upload-section">
+            <div class="upload-container">
+                <label for="imageInput" class="file-input-label">Choose Files</label>
+                <input type="file" id="imageInput" multiple accept="image/*" style="display: none;">
+                <div id="dropArea" class="drop-area">Or drop files here</div>
+            </div>
+        </div>
+
+        <div id="gallerySection" class="section gallery-section" style="display: none;">
+            <div class="gallery-header">
+                <h2>Image Gallery</h2>
+                <div class="gallery-actions">
+                    <button id="downloadAllButton" class="button" disabled>Download All</button>
+                    <button id="clearAllButton" class="button secondary" disabled>Clear All</button>
+                </div>
+            </div>
+            <div id="gallery"></div>
+            <div id="pagination"></div>
+        </div>
+    </div>
+
+    <!-- Canvas Tool Modal -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -63,8 +63,49 @@
             </div>
         </div>
     </div>
+
+    <!-- Combine Docs Tool -->
+    <div id="combine-docs" class="tool-container" style="display: none;">
+        <h1>Combine Docs</h1>
+        <div class="upload-container">
+            <label for="fileInput" class="file-input-label">Choose Files</label>
+            <input type="file" id="fileInput" multiple accept=".txt" style="display: none;">
+            <div id="dropArea" class="drop-area">or drop files here</div>
+        </div>
+
+        <div id="fileGrid"></div>
+
+        <div class="button-container">
+            <button id="combineButton" class="button primary" disabled>Combine Files</button>
+            <button id="clearButton" class="button secondary" disabled>Clear Files</button>
+        </div>
+
+        <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+            <i class="fas fa-spinner fa-spin"></i> Combining...
+        </div>
+
+        <div id="combinedContentContainer" style="display: none;">
+            <h2>Combined Content</h2>
+            <textarea id="combinedContent" readonly></textarea>
+            <div class="button-container">
+                <button id="downloadButton" class="button">Download Combined Text</button>
+                <button id="copyButton" class="button">Copy to Clipboard</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Combine Docs Preview Modal -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="previewFileName"></h2>
+            <pre id="previewContent"></pre>
+        </div>
+    </div>
+
+    <!-- Shared Elements -->
     <div id="toast" class="toast"></div>
-    <div id="loadingIndicator" class="loading-indicator">Processing...</div>
+
     <script src="script.js"></script>
 </body>
 </html>
