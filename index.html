@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>clivethings</title>
+    <meta name="description" content="clivethings is a personal toolkit website featuring useful web-based utilities for developers and casual users alike. Explore tools like the Canvas Tool for managing images and Combine Docs for merging text files." />
+    <meta name="keywords" content="clivethings, toolkit, web-based utilities, developers, casual users, Canvas Tool, Combine Docs, image management, text file merging" />
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
     <link rel="icon" type="image/png" href="/assets/favicon.png" />
     <link rel="stylesheet" href="styles/main.css" />
@@ -19,12 +21,12 @@
       <h1>clivethings</h1>
       <div class="tool-grid">
         <div class="tool-card" data-tool="canvas">
-          <div class="tool-icon"><i class="fas fa-image"></i></div>
+          <div class="tool-icon"><i class="fas fa-image" aria-hidden="true"></i></div>
           <div class="tool-name">Canvas Tool</div>
           <div class="tool-description">Process and manage images</div>
         </div>
         <div class="tool-card" data-tool="combine">
-          <div class="tool-icon"><i class="fas fa-file-alt"></i></div>
+          <div class="tool-icon"><i class="fas fa-file-alt" aria-hidden="true"></i></div>
           <div class="tool-name">Combine Docs</div>
           <div class="tool-description">Merge multiple text files</div>
         </div>
@@ -43,6 +45,7 @@
             multiple
             accept="image/*"
             style="display: none"
+            aria-label="Choose image files to upload"
           />
           <div id="dropArea" class="drop-area">Or drop files here</div>
         </div>
@@ -94,6 +97,7 @@
           multiple
           accept=".txt"
           style="display: none"
+          aria-label="Choose text files to combine"
         />
         <div id="dropArea" class="drop-area">or drop files here</div>
       </div>
