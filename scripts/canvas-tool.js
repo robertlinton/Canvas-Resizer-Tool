@@ -10,9 +10,7 @@
     const modal = document.getElementById('modal');
     const modalTitle = document.getElementById('modalTitle');
     const modalCanvasContainer = document.getElementById('modalCanvasContainer');
-    const closeButton = document.getElementById('closeButton');
-    const prevButton = document.getElementById('prevButton');
-    const nextButton = document.getElementById('nextButton');
+    const closeButton = document.querySelector('.close');
     const toast = document.getElementById('toast');
     const loadingIndicator = document.getElementById('loadingIndicator');
     const paginationContainer = document.getElementById('pagination');
@@ -24,7 +22,7 @@
 
     // Reusable canvas
     const processingCanvas = document.createElement('canvas');
-    const processingCtx = processingCanvas.getContext('2d');
+    const processingCtx = processingCanvas.getContext('2d', { willReadFrequently: true });
 
     // File handling functions
     function handleFileSelect(e) {
@@ -90,6 +88,9 @@
     async function processImage(img) {
         processingCanvas.width = img.width;
         processingCanvas.height = img.height;
+
+        // Use the willReadFrequently flag to optimize performance
+        const processingCtx = processingCanvas.getContext('2d', { willReadFrequently: true });
         processingCtx.drawImage(img, 0, 0);
 
         const imageData = processingCtx.getImageData(0, 0, processingCanvas.width, processingCanvas.height);
@@ -288,28 +289,10 @@
         const canvas = image.processed;
         modalCanvasContainer.appendChild(canvas);
         modal.style.display = 'block';
-        updateModalNavigation();
     }
 
     function closeModal() {
         modal.style.display = 'none';
-    }
-
-    function updateModalNavigation() {
-        prevButton.disabled = currentModalIndex === 0;
-        nextButton.disabled = currentModalIndex === images.length - 1;
-    }
-
-    function showPreviousImage() {
-        if (currentModalIndex > 0) {
-            openModal(currentModalIndex - 1);
-        }
-    }
-
-    function showNextImage() {
-        if (currentModalIndex < images.length - 1) {
-            openModal(currentModalIndex + 1);
-        }
     }
 
     function showLoadingIndicator() {
@@ -336,15 +319,13 @@
     downloadAllButton.addEventListener('click', downloadAllImages);
     clearAllButton.addEventListener('click', clearAllImages);
     closeButton.addEventListener('click', closeModal);
-    prevButton.addEventListener('click', showPreviousImage);
-    nextButton.addEventListener('click', showNextImage);
 
     // Window click event to close modal
     window.onclick = function(event) {
         if (event.target == modal) {
             closeModal();
         }
-    }
+    };
 
     // Initialize the page
     updateGalleryVisibility();
