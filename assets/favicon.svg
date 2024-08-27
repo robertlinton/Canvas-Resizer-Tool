@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="1000" height="1000"><rect width="1000" height="1000" rx="200" ry="200" fill="#555555"></rect><g transform="matrix(12.5,0,0,12.5,100,100)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="64" height="64"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Canvas Icon (Rectangle) -->
+  <rect x="8" y="8" width="48" height="48" rx="8" ry="8" fill="#2d3436"></rect>
+
+  <!-- Resize Arrows -->
+  <path d="M20 44 L44 20 M34 44 L44 34 M20 20 L30 30" stroke="#dfe6e9" stroke-width="4" stroke-linecap="round"></path>
+</svg></svg></g></svg>

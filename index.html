@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Resizer</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Canvas Resizer</h1>
+        </header>
+        
+        <main>
+            <section class="upload-section">
+                <div class="upload-container">
+                    <input type="file" id="imageInput" accept="image/*" multiple>
+                    <label for="imageInput" class="file-input-label">
+                        <i class="fas fa-cloud-upload-alt"></i> Choose Files
+                    </label>
+                    <div class="drop-area" id="dropArea">
+                        <p>Or drop files here</p>
+                    </div>
+                </div>
+            </section>
+            <section id="gallerySection" class="gallery-section" style="display: none;">
+                <div class="gallery-header">
+                    <h2>Image Gallery</h2>
+                    <div class="gallery-actions">
+                        <button id="downloadAllButton" class="button primary">
+                            <i class="fas fa-download"></i> Download All
+                        </button>
+                        <button id="clearAllButton" class="button secondary">
+                            <i class="fas fa-trash"></i> Clear All
+                        </button>
+                    </div>
+                </div>
+                <div id="gallery"></div>
+                <div id="pagination"></div>
+            </section>
+        </main>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div id="modalCanvasContainer"></div>
+            <div class="modal-buttons">
+                <button id="prevButton" class="button">Previous</button>
+                <button id="nextButton" class="button">Next</button>
+                <button id="closeButton" class="button">Close</button>
+            </div>
+        </div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <div id="loadingIndicator" class="loading-indicator">Processing...</div>
+    <script src="script.js"></script>
+</body>
+</html>
