@@ -12,7 +12,6 @@
     const modalCanvasContainer = document.getElementById('modalCanvasContainer');
     const closeButton = document.querySelector('.close');
     const toast = document.getElementById('toast');
-    const loadingIndicator = document.getElementById('loadingIndicator');
     const paginationContainer = document.getElementById('pagination');
 
     let images = [];
@@ -51,7 +50,6 @@
     }
 
     async function processFiles(files) {
-        showLoadingIndicator();
         showToast('Processing images...');
         for (let i = 0; i < files.length; i++) {
             if (files[i].type.startsWith('image/')) {
@@ -66,7 +64,6 @@
             }
         }
         updateGallery();
-        hideLoadingIndicator();
         showToast('Images processed successfully!');
     }
 
@@ -255,7 +252,6 @@
             return;
         }
 
-        showLoadingIndicator();
         showToast('Preparing zip file...');
         const zip = new JSZip();
         
@@ -276,8 +272,6 @@
         } catch (error) {
             console.error('Error creating zip file:', error);
             showToast('Error creating zip file. Please try again.');
-        } finally {
-            hideLoadingIndicator();
         }
     }
 
@@ -293,14 +287,6 @@
 
     function closeModal() {
         modal.style.display = 'none';
-    }
-
-    function showLoadingIndicator() {
-        loadingIndicator.style.display = 'block';
-    }
-
-    function hideLoadingIndicator() {
-        loadingIndicator.style.display = 'none';
     }
 
     function showToast(message) {

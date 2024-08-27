@@ -1,146 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>clivethings</title>
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-    <link rel="icon" type="image/png" href="/assets/favicon.png" />
-    <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/canvas-tool.css" />
-    <link rel="stylesheet" href="styles/combine-docs.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/canvas-tool.css">
+    <link rel="stylesheet" href="styles/combine-docs.css">
+    <link rel="stylesheet" href="styles/jsonify.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
-  </head>
-  <body>
-    <!-- Main Menu -->
+</head>
+<body>
     <div id="main-menu" class="container">
-      <h1>clivethings</h1>
-      <div class="tool-grid">
-        <div class="tool-card" data-tool="canvas">
-          <div class="tool-icon"><i class="fas fa-image" aria-hidden="true"></i></div>
-          <div class="tool-name">Canvas Tool</div>
-          <div class="tool-description">Process and manage images</div>
+        <h1>clivethings</h1>
+        <div class="tool-grid">
+            <div class="tool-card" data-tool="canvas">
+                <div class="tool-icon">🖼️</div>
+                <div class="tool-name">Canvas Tool</div>
+                <div class="tool-description">Process and manage images</div>
+            </div>
+            <div class="tool-card" data-tool="combine">
+                <div class="tool-icon">📄</div>
+                <div class="tool-name">Combine Docs</div>
+                <div class="tool-description">Merge multiple text files</div>
+            </div>
+            <div class="tool-card" data-tool="jsonify">
+                <div class="tool-icon">🔧</div>
+                <div class="tool-name">JSONify</div>
+                <div class="tool-description">Format and beautify JSON</div>
+            </div>
         </div>
-        <div class="tool-card" data-tool="combine">
-          <div class="tool-icon"><i class="fas fa-file-alt" aria-hidden="true"></i></div>
-          <div class="tool-name">Combine Docs</div>
-          <div class="tool-description">Merge multiple text files</div>
-        </div>
-      </div>
     </div>
 
-    <!-- Canvas Tool -->
-    <div id="canvas-tool" class="tool-container" style="display: none">
-      <h1>Canvas Tool</h1>
-      <div class="section upload-section">
+    <div id="canvas-tool" class="tool-container" style="display: none;">
+        <h1>Canvas Tool</h1>
+        <div class="section upload-section">
+            <div class="upload-container">
+                <label for="imageInput" class="file-input-label">Choose Files</label>
+                <input type="file" id="imageInput" accept="image/*" multiple style="display: none;">
+                <div id="dropArea" class="drop-area">Or drop files here</div>
+            </div>
+        </div>
+        <div id="gallerySection" class="section gallery-section" style="display: none;">
+            <div class="gallery-header">
+                <h2>Image Gallery</h2>
+                <div class="gallery-actions">
+                    <button id="downloadAllButton" class="button">Download All</button>
+                    <button id="clearAllButton" class="button secondary">Clear All</button>
+                </div>
+            </div>
+            <div id="gallery"></div>
+            <div id="pagination"></div>
+        </div>
+    </div>
+
+    <div id="combine-docs" class="tool-container" style="display: none;">
+        <h1>Combine Docs</h1>
         <div class="upload-container">
-          <label for="imageInput" class="file-input-label">Choose Files</label>
-          <input
-            type="file"
-            id="imageInput"
-            multiple
-            accept="image/*"
-            style="display: none"
-            aria-label="Choose image files to upload"
-          />
-          <div id="dropArea" class="drop-area">Or drop files here</div>
+            <label for="fileInput" class="file-input-label">Choose Files</label>
+            <input type="file" id="fileInput" accept=".txt" multiple style="display: none;">
+            <div id="dropArea" class="drop-area">or drop files here</div>
         </div>
-      </div>
-
-      <div
-        id="gallerySection"
-        class="section gallery-section"
-        style="display: none"
-      >
-        <div class="gallery-header">
-          <h2>Image Gallery</h2>
-          <div class="gallery-actions">
-            <button id="downloadAllButton" class="button" disabled>
-              Download All
-            </button>
-            <button id="clearAllButton" class="button secondary" disabled>
-              Clear All
-            </button>
-          </div>
-        </div>
-        <div id="gallery"></div>
-        <div id="pagination"></div>
-      </div>
-    </div>
-
-    <!-- Canvas Tool Modal -->
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2 id="modalTitle"></h2>
-        <div id="modalCanvasContainer"></div>
-      </div>
-    </div>
-
-    <!-- Combine Docs Tool -->
-    <div id="combine-docs" class="tool-container" style="display: none">
-      <h1>Combine Docs</h1>
-      <div class="upload-container">
-        <label for="fileInput" class="file-input-label">Choose Files</label>
-        <input
-          type="file"
-          id="fileInput"
-          multiple
-          accept=".txt"
-          style="display: none"
-          aria-label="Choose text files to combine"
-        />
-        <div id="dropArea" class="drop-area">or drop files here</div>
-      </div>
-
-      <div id="fileGrid"></div>
-
-      <div class="button-container">
-        <button id="combineButton" class="button primary" disabled>
-          Combine Files
-        </button>
-        <button id="clearButton" class="button secondary" disabled>
-          Clear Files
-        </button>
-      </div>
-
-      <div
-        id="loadingIndicator"
-        class="loading-indicator"
-        style="display: none"
-      >
-        <i class="fas fa-spinner fa-spin"></i> Combining...
-      </div>
-
-      <div id="combinedContentContainer" style="display: none">
-        <h2>Combined Content</h2>
-        <textarea id="combinedContent" readonly></textarea>
+        <div id="fileGrid"></div>
         <div class="button-container">
-          <button id="downloadButton" class="button">
-            Download Combined Text
-          </button>
-          <button id="copyButton" class="button">Copy to Clipboard</button>
+            <button id="combineButton" class="button" disabled>Combine Files</button>
+            <button id="clearButton" class="button secondary" disabled>Clear Files</button>
         </div>
-      </div>
+        <div id="combinedContentContainer" style="display: none;">
+            <h2>Combined Content</h2>
+            <textarea id="combinedContent" readonly></textarea>
+            <div class="button-container">
+                <button id="downloadButton" class="button">Download Combined Text</button>
+                <button id="copyButton" class="button">Copy to Clipboard</button>
+            </div>
+        </div>
     </div>
 
-    <!-- Combine Docs Preview Modal -->
+    <div id="jsonify" class="tool-container" style="display: none;">
+        <h1>JSONify</h1>
+        <div class="input-section">
+            <textarea id="jsonInput" placeholder="Paste your JSON here"></textarea>
+            <div class="options">
+                <label for="indentationLevel">Indentation:</label>
+                <select id="indentationLevel">
+                    <option value="2">2 spaces</option>
+                    <option value="4">4 spaces</option>
+                    <option value="tab">Tab</option>
+                </select>
+            </div>
+            <div class="button-container">
+                <button id="formatButton" class="button">Format JSON</button>
+            </div>
+        </div>
+        <div id="output-section" class="output-section" style="display: none;">
+            <h2>Formatted JSON</h2>
+            <pre id="jsonOutput"></pre>
+            <div class="button-container">
+                <button id="copyButton" class="button">Copy to Clipboard</button>
+                <button id="downloadButton" class="button">Download JSON</button>
+            </div>
+        </div>
+        <div id="errorMessage" class="error-message"></div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div id="modalCanvasContainer"></div>
+        </div>
+    </div>
+
     <div id="previewModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2 id="previewFileName"></h2>
-        <pre id="previewContent"></pre>
-      </div>
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="previewFileName"></h2>
+            <pre id="previewContent"></pre>
+        </div>
     </div>
 
-    <!-- Shared Elements -->
     <div id="toast" class="toast"></div>
 
-    <!-- Scripts -->
     <script src="scripts/main-menu.js"></script>
     <script src="scripts/canvas-tool.js"></script>
     <script src="scripts/combine-docs.js"></script>
-  </body>
+    <script src="scripts/jsonify.js"></script>
+</body>
 </html>

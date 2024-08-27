@@ -6,7 +6,6 @@
     const downloadButton = document.getElementById('downloadButton');
     const copyButton = document.getElementById('copyButton');
     const combinedContent = document.getElementById('combinedContent');
-    const loadingIndicator = document.getElementById('loadingIndicator');
     const clearButton = document.getElementById('clearButton');
     const dropArea = document.getElementById('dropArea');
     const combinedContentContainer = document.getElementById('combinedContentContainer');
@@ -142,7 +141,6 @@
     }
 
     async function combineFiles() {
-        loadingIndicator.style.display = 'block';
         combinedContentContainer.style.display = 'none';
         let combined = '';
         const fileCards = fileGrid.querySelectorAll('.file-card');
@@ -158,7 +156,6 @@
                     const content = await file.text();
                     combined += `${fileNumber} ${file.name}\n${content}\n\n`;
                     processedFiles++;
-                    updateCombineProgress(processedFiles, totalFiles);
                 }
             }
             combinedContent.value = combined.trim();
@@ -167,19 +164,7 @@
         } catch (error) {
             showToast('Error combining files. Please try again.');
             console.error('Error combining files:', error);
-        } finally {
-            loadingIndicator.style.display = 'none';
-            resetCombineProgress();
         }
-    }
-
-    function updateCombineProgress(processed, total) {
-        const percent = (processed / total) * 100;
-        loadingIndicator.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Combining... ${percent.toFixed(0)}% (${processed}/${total} files)`;
-    }
-
-    function resetCombineProgress() {
-        loadingIndicator.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Combining...';
     }
 
     function downloadCombinedFile() {
