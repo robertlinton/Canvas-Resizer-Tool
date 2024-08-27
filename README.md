@@ -1,52 +1,80 @@
+# CliveTools
 
-# Canvas Tool
+Welcome to CliveTools, a personal website for sharing useful tools with friends and fellow developers. This site currently features two main tools: Canvas Tool for image processing and Combine Docs for merging text files.
 
-The Canvas Tool is a web-based application designed to help users easily resize and manage their image files. This tool provides a user-friendly interface for uploading, viewing, and resizing images, as well as options to download or clear the images from the gallery.
+## Table of Contents
+
+1. [Features](#features)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Tools](#tools)
+   - [Canvas Tool](#canvas-tool)
+   - [Combine Docs](#combine-docs)
+5. [Contributing](#contributing)
+6. [License](#license)
 
 ## Features
 
-- **Upload Images:** Easily upload multiple images at once through the file input or by dragging and dropping files into the designated area.
-- **Image Gallery:** View all uploaded images in a gallery format, with options to download all images at once or clear the gallery.
-- **Modal View:** Click on an image to open a modal with options to navigate through images, resize, and view detailed properties.
-- **Responsive Design:** The tool is built to be responsive, providing a seamless experience across different devices.
+- Clean and intuitive user interface
+- Responsive design for desktop and mobile devices
+- Two powerful tools in one place
+- Easy navigation between tools
 
 ## Installation
 
-To get started with the  Tool, clone the repository and open the `index.html` file in your browser.
-
-```bash
-git clone https://github.com/robertlinton/canvastool
-cd Canvas
-```
+1. Clone the repository:
+   ```
+   git clone https://github.com/robertlinton/clivetools.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd clivetools
+   ```
+3. Open `index.html` in your web browser to run the application locally.
 
 ## Usage
 
-1. **Upload Images:** Click on the "Choose Files" button or drag and drop images into the upload area.
-2. **View Gallery:** After uploading, the images will appear in the gallery section. Use the buttons to download all images or clear the gallery.
-3. **Modal Navigation:** Click on any image to open it in a modal. Use the "Previous" and "Next" buttons to navigate through the images.
-4. **Close Modal:** Click the "Close" button or the "×" icon to close the modal and return to the gallery.
+1. Open the website in your browser.
+2. On the main page, you'll see cards for each available tool.
+3. Click on a tool card to open that specific tool.
+4. Use the "Back to Main Menu" button to return to the tool selection screen.
 
-## Dependencies
+## Tools
 
-- [Font Awesome](https://cdnjs.com/libraries/font-awesome): For icons used throughout the application.
-- [JSZip](https://stuk.github.io/jszip/): Used to compress the images into a ZIP file for downloading.
+### Canvas Tool
+
+The Canvas Tool allows you to process and manage images.
+
+Features:
+- Upload multiple images via drag-and-drop or file selection
+- Automatic image processing (cropping to content)
+- Image gallery with preview functionality
+- Download individual processed images
+- Download all processed images as a zip file
+- Delete unwanted images from the gallery
+
+### Combine Docs
+
+Combine Docs lets you merge multiple text files into a single document.
+
+Features:
+- Upload multiple text files via drag-and-drop or file selection
+- Rearrange the order of files by dragging
+- Preview individual file contents
+- Combine all uploaded files into a single document
+- Download the combined document as a text file
+- Copy the combined content to clipboard
 
 ## Contributing
 
-If you would like to contribute to this project, please fork the repository and create a pull request with your changes. Make sure to provide a detailed description of what you've added or modified.
+We welcome contributions to CliveTools! If you have a suggestion or have found a bug, please open an issue. If you'd like to contribute code, please fork the repository and create a pull request.
 
 ## License
 
-This project is licensed under the MIT License. See the [License](https://raw.githubusercontent.com/robertlinton/canvastool/main/LICENSE.md). file for more details.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-### Important License Terms:
-- **Credit:** All copies, modified versions, or substantial portions of the Software must include the following attribution in a clear and visible location within the project:
-  - "Original project by Robert Linton, available at [https://github.com/robertlinton/canvastool](https://github.com/robertlinton/canvastool)."
-- **Modifications:** Any modifications or derivative works must include a clear description of the changes made to the original project and attribution to the original author, Robert Linton, as specified in the "Credit" section.
-- **Distribution:** When distributing the Software, you are required to provide a copy of this license.
+## Contact
 
-## Acknowledgments
+If you have any questions or need further information, please contact Clive at [clivethings@gmail.com].
 
-- Special thanks to the open-source libraries and tools that made this project possible.
-- Icon credits to [Font Awesome](https://fontawesome.com/).
-
+Thank you for using CliveTools!

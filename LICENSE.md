@@ -6,7 +6,7 @@ Copyright (c) 2024 Robert Linton
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, subject to the following conditions:
 
 1. **Credit:** All copies, modified versions, or substantial portions of the Software must include the following attribution in a clear and visible location within the project:
-   - "Original project by Robert Linton, available at [https://github.com/robertlinton/canvastool](https://github.com/robertlinton/canvastool)."
+   - "Original project by Robert Linton, available at [https://github.com/robertlinton/clivetools](https://github.com/robertlinton/clivetools)."
    - If the project is distributed in a non-code format (such as a compiled binary), the attribution must be included in the documentation or any prominent user-facing location.
 
 2. **Modifications:** Any modifications or derivative works must include the following:
