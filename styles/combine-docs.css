@@ -247,3 +247,63 @@
 .blue-background-class {
     background-color: #e3f2fd;
 }
+
+@media (max-width: 768px) {
+    .upload-container {
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .file-input-label {
+        width: 160px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .drop-area {
+        padding: 15px;
+        width: 90%;
+        max-width: none;
+    }
+
+    #fileGrid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+        margin: 15px 0;
+    }
+
+    .file-card {
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .file-icon {
+        font-size: 2em;
+        margin-bottom: 8px;
+    }
+
+    .file-name {
+        font-size: 0.9em;
+    }
+
+    .preview-button, .delete-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 0.7em;
+    }
+
+    #combinedContent {
+        height: 200px;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .button-container {
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .loading-indicator {
+        margin-top: 15px;
+    }
+}

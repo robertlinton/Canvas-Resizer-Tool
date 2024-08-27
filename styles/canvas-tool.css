@@ -225,3 +225,74 @@
     background-color: #2980b9;
     font-weight: bold;
 }
+
+@media (max-width: 768px) {
+    .upload-container {
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .file-input-label {
+        width: 160px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .drop-area {
+        padding: 15px;
+        width: 90%;
+        max-width: none;
+    }
+
+    #gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .gallery-item {
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .img-container {
+        height: 150px;
+    }
+
+    .info-container {
+        padding: 8px;
+    }
+
+    .item-actions {
+        padding: 8px;
+    }
+
+    .download-button, .delete-button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    #pagination {
+        margin-top: 15px;
+        gap: 8px;
+    }
+
+    #pagination button {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+
+    #modalCanvasContainer canvas {
+        max-height: 60vh;
+    }
+
+    .modal-buttons {
+        gap: 8px;
+        margin-top: 15px;
+    }
+}
