@@ -247,38 +247,3 @@
 .blue-background-class {
     background-color: #e3f2fd;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #fileGrid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-
-    .file-card {
-        padding: 15px;
-    }
-
-    .file-icon {
-        font-size: 2em;
-    }
-
-    .file-name {
-        font-size: 0.9em;
-    }
-
-    .delete-icon, .preview-button {
-        top: 5px;
-        right: 5px;
-        font-size: 0.5em;
-        width: 14px;
-        height: 14px;
-    }
-
-    .preview-button {
-        right: 25px;
-    }
-
-    #combinedContent {
-        height: 200px;
-    }
-}
