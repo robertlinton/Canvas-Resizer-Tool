@@ -1,7 +1,7 @@
 
-# Canvas Resizer Tool
+# Resizify Tool
 
-The Canvas Resizer Tool is a web-based application designed to help users easily resize and manage their image files. This tool provides a user-friendly interface for uploading, viewing, and resizing images, as well as options to download or clear the images from the gallery.
+The Resizify Tool is a web-based application designed to help users easily resize and manage their image files. This tool provides a user-friendly interface for uploading, viewing, and resizing images, as well as options to download or clear the images from the gallery.
 
 ## Features
 
@@ -12,11 +12,11 @@ The Canvas Resizer Tool is a web-based application designed to help users easily
 
 ## Installation
 
-To get started with the Canvas Resizer Tool, clone the repository and open the `index.html` file in your browser.
+To get started with the Resizify Tool, clone the repository and open the `index.html` file in your browser.
 
 ```bash
-git clone https://github.com/robertlinton/Canvas-Resizer-Tool.git
-cd Canvas-Resizer-Tool
+git clone https://github.com/robertlinton/Resizify
+cd Resizify
 ```
 
 ## Usage
@@ -37,11 +37,11 @@ If you would like to contribute to this project, please fork the repository and 
 
 ## License
 
-This project is licensed under the MIT License. See the [License](https://raw.githubusercontent.com/robertlinton/Canvas-Resizer-Tool/main/LICENSE.md). file for more details.
+This project is licensed under the MIT License. See the [License](https://raw.githubusercontent.com/robertlinton/Resizify/main/LICENSE.md). file for more details.
 
 ### Important License Terms:
 - **Credit:** All copies, modified versions, or substantial portions of the Software must include the following attribution in a clear and visible location within the project:
-  - "Original project by Robert Linton, available at [https://github.com/robertlinton/Canvas-Resizer-Tool](https://github.com/robertlinton/Canvas-Resizer-Tool)."
+  - "Original project by Robert Linton, available at [https://github.com/robertlinton/Resizify](https://github.com/robertlinton/Resizify)."
 - **Modifications:** Any modifications or derivative works must include a clear description of the changes made to the original project and attribution to the original author, Robert Linton, as specified in the "Credit" section.
 - **Distribution:** When distributing the Software, you are required to provide a copy of this license.
 
