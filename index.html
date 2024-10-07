@@ -4,57 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>clivethings</title>
-    <!-- Main CSS -->
     <link rel="stylesheet" href="styles/main.css">
-    <!-- Canvas Tool CSS -->
     <link rel="stylesheet" href="styles/canvas-tool.css">
-    <!-- Combine Docs CSS -->
     <link rel="stylesheet" href="styles/combine-docs.css">
-    <!-- Removed JSONify CSS -->
-    
-    <!-- Optional: Font Awesome for Enhanced Icons (Uncomment if using) -->
-    <!--
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pzP+9Q2w12RnvkTk9dxzvG3ZfKxYlYdY3wMGvDvfZVQ+5KZAWJKFjKQ1R8R2xJ2h77s1dQbGVh0XnL8JfE+WKw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    -->
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
 </head>
 <body>
-    <!-- Main Menu -->
     <div id="main-menu" class="container">
         <h1>clivethings</h1>
         <div class="tool-grid">
-            <!-- Canvas Tool Card -->
             <div class="tool-card" data-tool="canvas">
                 <div class="tool-icon">🖼️</div>
                 <div class="tool-name">Canvas Tool</div>
                 <div class="tool-description">Process and manage images</div>
             </div>
-            <!-- Combine Docs Tool Card -->
             <div class="tool-card" data-tool="combine">
                 <div class="tool-icon">📄</div>
                 <div class="tool-name">Combine Docs</div>
                 <div class="tool-description">Merge multiple text files</div>
             </div>
-            <!-- Removed JSONify Tool Card -->
         </div>
     </div>
 
-    <!-- Canvas Tool Container -->
     <div id="canvas-tool" class="tool-container" style="display: none;">
         <h1>Canvas Tool</h1>
-        <!-- Back to Main Menu Button -->
-        <button class="button back-button">Back to Main Menu</button>
-        <!-- Upload Section -->
         <div class="section upload-section">
             <div class="upload-container">
                 <label for="imageInput" class="file-input-label">Choose Files</label>
                 <input type="file" id="imageInput" accept="image/*" multiple style="display: none;">
-                <div id="dropAreaCanvas" class="drop-area">Or drop files here</div>
+                <div id="dropArea" class="drop-area">Or drop files here</div>
             </div>
         </div>
-        <!-- Gallery Section -->
         <div id="gallerySection" class="section gallery-section" style="display: none;">
             <div class="gallery-header">
                 <h2>Image Gallery</h2>
@@ -68,25 +49,18 @@
         </div>
     </div>
 
-    <!-- Combine Docs Container -->
     <div id="combine-docs" class="tool-container" style="display: none;">
         <h1>Combine Docs</h1>
-        <!-- Back to Main Menu Button -->
-        <button class="button back-button">Back to Main Menu</button>
-        <!-- Upload Section -->
         <div class="upload-container">
             <label for="fileInput" class="file-input-label">Choose Files</label>
             <input type="file" id="fileInput" accept=".txt" multiple style="display: none;">
-            <div id="dropAreaCombine" class="drop-area">Or drop files here</div>
+            <div id="dropArea" class="drop-area">or drop files here</div>
         </div>
-        <!-- File Grid -->
         <div id="fileGrid"></div>
-        <!-- Button Container -->
         <div class="button-container">
             <button id="combineButton" class="button" disabled>Combine Files</button>
             <button id="clearButton" class="button secondary" disabled>Clear Files</button>
         </div>
-        <!-- Combined Content Container -->
         <div id="combinedContentContainer" style="display: none;">
             <h2>Combined Content</h2>
             <textarea id="combinedContent" readonly></textarea>
@@ -97,7 +71,8 @@
         </div>
     </div>
 
-    <!-- General Modal -->
+    <!-- Removed JSONify Tool Container -->
+    
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -106,7 +81,6 @@
         </div>
     </div>
 
-    <!-- Preview Modal -->
     <div id="previewModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -115,13 +89,10 @@
         </div>
     </div>
 
-    <!-- Toast Notification -->
     <div id="toast" class="toast"></div>
 
-    <!-- JavaScript Files -->
     <script src="scripts/main-menu.js"></script>
     <script src="scripts/canvas-tool.js"></script>
     <script src="scripts/combine-docs.js"></script>
-    <!-- Removed JSONify Script -->
 </body>
 </html>
